@@ -1,0 +1,25 @@
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="k">import</span> <span class="nx">Axios</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.walkaisa.dev</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">Authorization</span><span class="p">:</span> <span class="dl">"</span><span class="s2">YOUR_KEY</span><span class="dl">"</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Make sure to replace <code>YOUR_KEY</code> with your API key.</p>
+</blockquote>
+
+<p>The API uses keys to allow access to the API. You can receive a new API key by joining our <a href="https://walkaisa.dev/discord">Discord</a>.</p>
+
+<p>The API expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+
+<p><code>Authorization: YOUR_KEY</code></p>
+
+<aside class="notice">
+You must replace <code>YOUR_KEY</code> with your personal API key.
+</aside>

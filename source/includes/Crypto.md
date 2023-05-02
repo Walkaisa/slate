@@ -1,6 +1,17 @@
 # Crypto
 
-## Get all available Cryptocurrencies
+## Get All Cryptocurrencies
+
+Get all available cryptocurrencies.
+
+### HTTP Request
+
+<div class="api-endpoint">
+	<div class="endpoint-data">
+		<i class="label label-get">GET</i>
+		<h6>/crypto</h6>
+	</div>
+</div>
 
 ```javascript
 import Axios from "axios";
@@ -12,7 +23,7 @@ const result = await Axios.get("https://api.walkaisa.dev/crypto", {
 });
 ```
 
-> The above request returns JSON structured like this:
+> JSON response example:
 
 ```json
 {
@@ -32,17 +43,18 @@ const result = await Axios.get("https://api.walkaisa.dev/crypto", {
 }
 ```
 
-This endpoint retrieves all available cryptocurrencies.
+## Get Specific Cryptocurrency
+
+Get a specific cryptocurrency.
 
 ### HTTP Request
 
-`GET https://api.walkaisa.dev/crypto`
-
-<aside class="success">
-200 - OK
-</aside>
-
-## Get a specific Cryptocurrency
+<div class="api-endpoint">
+	<div class="endpoint-data">
+		<i class="label label-get">GET</i>
+		<h6>/crypto</h6>
+	</div>
+</div>
 
 ```javascript
 import Axios from "axios";
@@ -57,7 +69,7 @@ const result = await Axios.get("https://api.walkaisa.dev/crypto", {
 });
 ```
 
-> The above request returns JSON structured like this:
+> JSON response example:
 
 ```json
 {
@@ -82,18 +94,8 @@ const result = await Axios.get("https://api.walkaisa.dev/crypto", {
 }
 ```
 
-This endpoint retrieves a specific cryptocurrency.
-
-### HTTP Request
-
-`GET https://api.walkaisa.dev/crypto`
-
 ### Query Parameters
 
-| Parameter | Description                               |
-| --------- | ----------------------------------------- |
-| query     | The name or symbol of the cryptocurrency. |
-
-<aside class="success">
-200 - OK
-</aside>
+| Parameter | Type   | Description           |
+| --------- | ------ | --------------------- |
+| `query`   | string | The name of the coin. |

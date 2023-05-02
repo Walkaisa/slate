@@ -2,11 +2,10 @@
 title: Walkaisa API
 
 language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
-    - javascript
+    - javascript: Node.js
 
 toc_footers:
     - <a href="https://walkaisa.dev/discord">Receive a API Key</a>
-    - <a href="https://walkaisa.dev">Made by Walkaisa</a>
 
 includes:
     - Introduction
