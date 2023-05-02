@@ -13,6 +13,8 @@ Create a new API user.
 	</div>
 </div>
 
+> Example request:
+
 ```javascript
 import Axios from "axios";
 
@@ -29,7 +31,7 @@ const result = await Axios.post(
 );
 ```
 
-> JSON response example:
+> Example response:
 
 ```json
 {

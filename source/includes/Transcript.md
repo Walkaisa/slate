@@ -1,6 +1,19 @@
 # Transcript
 
-## Create transcript
+## Create Transcript
+
+Create a new HTML transcript of a Discord channel.
+
+### HTTP Request
+
+<div class="api-endpoint">
+	<div class="endpoint-data">
+		<i class="label label-post">POST</i>
+		<h6>/transcripts</h6>
+	</div>
+</div>
+
+> Example request:
 
 ```javascript
 import Axios from "axios";
@@ -25,7 +38,7 @@ const result = await Axios.post(
 );
 ```
 
-> The above request returns JSON structured like this:
+> Example response:
 
 ```json
 {
@@ -34,22 +47,12 @@ const result = await Axios.post(
 }
 ```
 
-This endpoint returns a base64 encoded buffer of the generated html transcript.
-
-### HTTP Request
-
-`GET https://api.walkaisa.dev/transcripts`
-
 ### Body Parameters
 
-| Parameter  | Description                                                |
-| ---------- | ---------------------------------------------------------- |
-| token      | The token of the Discord bot.                              |
-| guild_id   | The ID of the guild.                                       |
-| channel_id | The ID of the channel.                                     |
-| header     | The header of the transcript. (A custom key value object.) |
-| footer     | The footer of the transcript. (A array of strings.)        |
-
-<aside class="success">
-200 - OK
-</aside>
+| Parameter  | Type   | Description                   |
+| ---------- | ------ | ----------------------------- |
+| token      | string | The token of the Discord bot. |
+| guild_id   | string | The ID of the guild.          |
+| channel_id | string | The ID of the channel.        |
+| header     | object | The header of the transcript. |
+| footer     | array  | The footer of the transcript. |

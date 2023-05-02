@@ -13,6 +13,8 @@ Get all available cryptocurrencies.
 	</div>
 </div>
 
+> Example request:
+
 ```javascript
 import Axios from "axios";
 
@@ -23,7 +25,7 @@ const result = await Axios.get("https://api.walkaisa.dev/crypto", {
 });
 ```
 
-> JSON response example:
+> Example response:
 
 ```json
 {
@@ -56,6 +58,8 @@ Get a specific cryptocurrency.
 	</div>
 </div>
 
+> Example request:
+
 ```javascript
 import Axios from "axios";
 
@@ -69,7 +73,7 @@ const result = await Axios.get("https://api.walkaisa.dev/crypto", {
 });
 ```
 
-> JSON response example:
+> Example response:
 
 ```json
 {
