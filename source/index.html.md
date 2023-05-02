@@ -1,26 +1,23 @@
 ---
-title: API Reference
+title: Walkaisa API
 
 language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
-  - shell
-  - ruby
-  - python
-  - javascript
+    - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
+    - <a href='#'>Sign Up for a Developer Key</a>
+    - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - errors
+    - errors
 
 search: true
 
 code_clipboard: true
 
 meta:
-  - name: description
-    content: Documentation for the Kittn API
+    - name: description
+      content: Documentation for the Kittn API
 ---
 
 # Introduction
@@ -35,147 +32,109 @@ This example API documentation page was created with [Slate](https://github.com/
 
 > To authorize, use this code:
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
-```
-
 ```javascript
-const kittn = require('kittn');
+import Axios from "axios";
 
-let api = kittn.authorize('meowmeowmeow');
+const result = await Axios.get("https://api.walkaisa.dev", {
+    headers: {
+        Authorization: "YOUR_KEY"
+    }
+});
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> Make sure to replace `YOUR_KEY` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+The API uses keys to allow access to the API. You can receive a new API key by joining our [Discord](https://walkaisa.dev/discord).
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+The API expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
-`Authorization: meowmeowmeow`
+`Authorization: YOUR_KEY`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>YOUR_KEY</code> with your personal API key.
 </aside>
 
-# Kittens
+# Crypto
 
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
-```
+## Get All Cryptocurrencies
 
 ```javascript
-const kittn = require('kittn');
+import Axios from "axios";
 
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+const result = await Axios.get("https://api.walkaisa.dev/", {
+    headers: {
+        Authorization: "YOUR_KEY"
+    }
+});
 ```
 
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
+> The above request returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+    "statusCode": 200,
+    "response": [
+        {
+            "id": "bitcoin",
+            "name": "Bitcoin",
+            "symbol": "btc"
+        },
+        {
+            "id": "ethereum",
+            "name": "Ethereum",
+            "symbol": "eth"
+        }
+    ]
+}
+```
+
+This endpoint retrieves all cryptocurrencies.
+
+### HTTP Request
+
+`GET https://api.walkaisa.dev/crypto`
+
+<aside class="success">
+200 - OK
+</aside>
+
+## Get A Specific Cryptocurrency
+
+```javascript
+import Axios from "axios";
+
+const result = await Axios.get("https://api.walkaisa.dev/", {
+    headers: {
+        Authorization: "YOUR_KEY"
+    },
+    params: {
+        query: "bitcoin"
+    }
+});
+```
+
+> The above request returns JSON structured like this:
+
+```json
+{
+    "statusCode": 200,
+    "response": {
+        "name": "",
+        "symbol": "",
+        "currentPrice": "",
+        "marketCap": "",
+        "volume": "",
+        "allTimeHigh": "",
+        "change24h": "",
+        "change7d": "",
+        "change1y": "",
+        "circulatingSupply": "",
+        "maxSupply": "",
+        "lastUpdate": "",
+        "sourceURL": "https://www.coinbase.com/price/bitcoin",
+        "imageURL": "",
+        "chart": "Buffer64"
+    }
 }
 ```
 
@@ -189,9 +148,9 @@ This endpoint retrieves a specific kitten.
 
 ### URL Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+| Parameter | Description                      |
+| --------- | -------------------------------- |
+| ID        | The ID of the kitten to retrieve |
 
 ## Delete a Specific Kitten
 
@@ -216,9 +175,9 @@ curl "http://example.com/api/kittens/2" \
 ```
 
 ```javascript
-const kittn = require('kittn');
+const kittn = require("kittn");
 
-let api = kittn.authorize('meowmeowmeow');
+let api = kittn.authorize("meowmeowmeow");
 let max = api.kittens.delete(2);
 ```
 
@@ -226,8 +185,8 @@ let max = api.kittens.delete(2);
 
 ```json
 {
-  "id": 2,
-  "deleted" : ":("
+    "id": 2,
+    "deleted": ":("
 }
 ```
 
@@ -239,7 +198,6 @@ This endpoint deletes a specific kitten.
 
 ### URL Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
+| Parameter | Description                    |
+| --------- | ------------------------------ |
+| ID        | The ID of the kitten to delete |
