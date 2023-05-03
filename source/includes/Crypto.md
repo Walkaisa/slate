@@ -100,6 +100,6 @@ const result = await Axios.get("https://api.walkaisa.dev/crypto", {
 
 ### Query Parameters
 
-| Parameter | Type   | Description           |
-| --------- | ------ | --------------------- |
-| `query`   | string | The name of the coin. |
+| Parameter | Type   | Required | Description           |
+| --------- | ------ | -------- | --------------------- |
+| `query`   | string | true     | The name of the coin. |

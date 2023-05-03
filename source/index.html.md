@@ -11,7 +11,11 @@ includes:
     - Introduction
     - Authentication
     - Transcript
+    - Verify
     - Crypto
+    - IP
+    - Weather
+    - Icon
     - Errors
 
 search: true
