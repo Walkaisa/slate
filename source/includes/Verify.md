@@ -159,7 +159,7 @@ const result = await Axios.get("https://api.walkaisa.dev/verify", {
 }
 ```
 
-### URL Parameters
+### Query Parameters
 
 | Parameter   | Type   | Required | Description                |
 | ----------- | ------ | -------- | -------------------------- |
@@ -214,7 +214,7 @@ const result = await Axios.get("https://api.walkaisa.dev/verify", {
 }
 ```
 
-### URL Parameters
+### Query Parameters
 
 | Parameter   | Type   | Required | Description                |
 | ----------- | ------ | -------- | -------------------------- |
