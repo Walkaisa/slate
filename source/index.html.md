@@ -24,7 +24,7 @@ code_clipboard: true
 
 meta:
     - name: description
-      content: Documentation for the Walkaisa API
+      content: Documentation for api.walkaisa.dev
     - name: "theme-color"
       content: "#ff003c"
 ---

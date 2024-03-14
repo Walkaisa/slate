@@ -13,50 +13,49 @@ Get information about an IP address.
 	</div>
 </div>
 
-> Example request:
+> Example Request
 
 ```javascript
 import Axios from "axios";
 
-const result = await Axios.get("https://api.walkaisa.dev/ip", {
+const data = await Axios({
+    method: "GET",
+    url: "https://api.walkaisa.dev/ip",
     headers: {
         Authorization: "YOUR_KEY"
     },
     params: {
         query: "google.com"
     }
-});
+}).then(({ data }) => data);
 ```
 
-> Example response:
+> Example Response
 
 ```json
 {
-    "statusCode": 200,
-    "response": {
-        "ip": "142.251.163.100",
-        "type": "Hosting",
-        "location": {
-            "city": "Colts Neck",
-            "zip": "07722",
-            "region": "New Jersey",
-            "continent": "North America",
-            "country": "United States",
-            "coordinates": {
-                "lat": 40.3029,
-                "lon": -74.1828
-            },
-            "currency": "USD",
-            "timezone": "America/New_York",
-            "image": "https://www.countryflags.io/US/flat/64.png"
+    "ip": "142.251.163.100",
+    "type": "Hosting",
+    "location": {
+        "city": "Colts Neck",
+        "zip": "07722",
+        "region": "New Jersey",
+        "continent": "North America",
+        "country": "United States",
+        "coordinates": {
+            "lat": 40.3029,
+            "lon": -74.1828
         },
-        "organization": {
-            "as": "AS15169 Google LLC",
-            "asname": "GOOGLE",
-            "org": "Google LLC",
-            "reverse": "wv-in-f100.1e100.net",
-            "isp": "Google LLC"
-        }
+        "currency": "USD",
+        "timezone": "America/New_York",
+        "image": "https://www.countryflags.io/US/flat/64.png"
+    },
+    "organization": {
+        "as": "AS15169 Google LLC",
+        "asname": "GOOGLE",
+        "org": "Google LLC",
+        "reverse": "wv-in-f100.1e100.net",
+        "isp": "Google LLC"
     }
 }
 ```

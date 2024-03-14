@@ -18,9 +18,13 @@ Create a new HTML transcript of a Discord channel.
 ```javascript
 import Axios from "axios";
 
-const result = await Axios.post(
-    "https://api.walkaisa.dev/transcripts",
-    {
+const data = await Axios({
+    method: "POST",
+    url: "https://api.walkaisa.dev/transcripts",
+    headers: {
+        Authorization: "YOUR_KEY"
+    },
+    data: {
         token: "MTA0ODMzMDc1Mzg2NTQzMzEwOQ.G3tbI5...",
         guild_id: "893502016024875008",
         channel_id: "1089202275383255041",
@@ -29,25 +33,16 @@ const result = await Axios.post(
             Channel: "general"
         },
         footer: ["Powered by Walkaisa Industries"]
-    },
-    {
-        headers: {
-            Authorization: "YOUR_KEY"
-        }
     }
-);
+}).then(({ data }) => data);
 ```
 
 > Example response:
 
 ```json
 {
-    "statusCode": 200,
-    "message": "The transcript was successfully created.",
-    "response": {
-        "url": "https://api.walkaisa.dev/transcripts/893502016024875008/1089202275383255041",
-        "buffer": "BufferBase64"
-    }
+    "url": "https://api.walkaisa.dev/transcripts/893502016024875008/1089202275383255041",
+    "buffer": "BufferBase64"
 }
 ```
 
